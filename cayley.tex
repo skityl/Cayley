@@ -1,0 +1,168 @@
+\documentclass{unswmaths}
+
+\usepackage{unswshortcuts}
+
+\begin{document}
+
+\subject{}
+\author{}
+\title{}
+\studentno{}
+
+
+\newcommand{\Real}{\operatorname{Re}}
+\newcommand{\Img}{\operatorname{Im}}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+\newcommand{\Proj}{\mathbb{P}}
+\newcommand{\isom}{\cong}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\ha}{\boldsymbol{m}}
+\newcommand{\Circ}{\mathbb{T}}
+\newcommand{\BMO}{{BMO}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Diff}{\mathcal{D}}
+\newcommand{\pvint}{\mathrm{p.v.}\int}
+\newcommand{\Half}{\mathbb{H}}
+\newcommand{\Disc}{\mathbb{D}}
+
+
+\section*{Introduction}
+The purpose of these notes is to describe the relationship between
+function spaces on the circle and on the line by the Cayley transform.
+
+\section*{Notation}
+$\Half = \{z \in \Cplx\;:\;\Img(z) > 0\}$ is the upper half plane,
+and $\Disc = \{z \in \Cplx\;:\;|z| < 1\}$ is the unit disc. $\ha$
+denotes the normalised Haar measure on $\Circ$, and $\lambda$ is the Lebesgue measure 
+on $\Rl$. $\ha_2$ denotes the area measure on $\Cplx$.
+
+
+$E$ denotes a Banach space. By $L^p(X;E)$, we mean
+\begin{equation*}
+    \|f\|_{L^p(X;E)}^p = \int_X \|f\|_E^p\;d\mu
+\end{equation*}
+for $0 < p < \infty$, and we say $f \in L^\infty(X;E)$ when $\|f\|_E \in L^\infty(X)$. 
+
+\section*{The Cayley Transform}
+The Cayley transform is a conformal mapping of the complex plane to itself, given by
+\begin{equation*}
+    \omega: z\mapsto \frac{z-i}{z+i}.
+\end{equation*}
+Defined for $z \neq -i$. In particular, $\omega$ maps the upper half plane to the unit disc, 
+and the real line to the unit circle with $1$ removed. Note that
+\begin{equation*}
+    \omega^{-1}: z\mapsto -i\frac{z+1}{z-1}.
+\end{equation*}
+
+
+Since this is not a bijection, we
+must make careful note of the following technical point:
+
+\begin{remark}
+    Throughout these notes, as is typical in analysis, functions on $\Rl$ or $\Circ$
+    are defined only up to almost everywhere equivalence. The spaces of almost-everywhere
+    equivalence classes of measurable $E$-valued functions on a measure space $X$
+    is denoted $L^0(X;E)$. 
+    
+    If $X$ is a topological space, we consider $C(X;E) \subseteq L^0(X;E)$ by identifying
+    a continuous function with an equivalence class of functions that agree with it almost everywhere.
+\end{remark}
+
+Given $f \in L^0(\Rl;E)$, we define
+\begin{equation*}
+    \mathcal{U}f := f\circ \omega^{-1} \in L^0(\Circ;E).
+\end{equation*}
+and for $g \in L^0(\Circ;E)$
+\begin{equation*}
+    \mathcal{U}^{-1} g = g\circ \omega.
+\end{equation*}
+
+It is evident that $\mathcal{U}$ is a well defined linear isomorphism of $L^0(\Rl;E)$ to $L^0(\Circ;E)$. 
+
+\section*{Integrability and the Cayley transform}
+The first result of use is,
+\begin{lemma}
+    For $0 < p \leq \infty$, $U$ maps continuously from $L^p(\Rl)$ to $L^p(\Circ)$. 
+\end{lemma}
+\begin{proof}
+    Let $f \in L^p(\Rl)$. Then we simply compute,
+    \begin{align*}
+        \|\mathcal{U}f\|_p^p &= \int_\Circ \left|f\left(-i\frac{z+1}{z-1}\right)\right|^p d\ha(z)\\
+        &= \frac{1}{2\pi} \int_0^{2\pi} 
+    \end{align*}
+    blah blah.
+\end{proof}
+
+A natural question is to ask for which $p$ is $\mathcal{U}L^p(\Rl) = L^p(\Circ)$? It is obvious
+that this is true for $p = \infty$, less obvious is that this works for $p = 2$.
+
+\section*{Hardy spaces}
+Hardy spaces on $\Disc$ as defined as spaces of holomorphic functions as follows,
+\begin{definition}
+    Let $0 < p < \infty$. Given a holomorphic $f:\Disc\rightarrow E$, we define
+    \begin{equation*}
+        \|f\|_{H^p(\Disc;E)}^p = \sup_{0 < r < 1} \left(\int_\Circ \|f(rz)\|_E^p \;d\ha(z)\right).
+    \end{equation*}
+
+    
+    Similarly, define
+    \begin{equation*}
+        \|f\|_{H^\infty(\Disc;E)} = \sup_{z \in \Disc} \|f(z)\|_E.
+    \end{equation*}
+    
+    We say that $f \in H^p(\Disc;E)$ if $\|f\|_{H^p(\Disc;E)} < \infty$ where $0 < p \leq \infty$.
+\end{definition}
+
+There are analogous Hardy spaces on the upper half plane,
+\begin{definition}
+    Let $0 < p < \infty$. Given a holomorphic $f:\Half\rightarrow E$, we define
+    \begin{equation*}
+        \|f\|_{H^p(\Half;E)}^p = \sup_{y > 0} \left(\int_\Rl \|f(x+iy)\|_E^p\;d\lambda(x) \right).
+    \end{equation*}
+    Similarly, define
+    \begin{equation*}
+        \|f\|_{H^\infty(\Half;E)} = \sup_{z \in \Half} \|f(z)\|_E
+    \end{equation*}
+   
+    We say that $f \in H^p(\Half;E)$ if and only if $\|f\|_{H^p(\Disc;E)} < \infty$ for $0 < p \leq \infty$
+\end{definition}
+
+The Hardy spaces are defined as spaces of functions on $\Disc$ and $\Half$. However, they are canonically
+identified with spaces of functions on $\Disc$ and $\Rl$ by taking ``boundary values". This is justified
+by the following lemma,
+\begin{lemma}
+    For $p \in (0,\infty]$, let $f \in H^p(\Disc;E)$. Then for almost all $z \in \Circ$, the limit
+    \begin{equation*}
+        \tilde{f}(z) := \lim_{r\rightarrow 1} f(rz)
+    \end{equation*}
+    exists, and defines $\tilde{f} \in L^p(\Circ;E)$. If $g \in L^0(\Circ;E)$
+    such that $g = \tilde{f}$ for some $f \in H^p(\Disc;E)$, we say that $f \in H^p(\Circ;E)$. 
+\end{lemma}
+
+\begin{thebibliography}{9}
+\bibitem{connes94}
+     Connes A., 
+    \emph{Noncommutative Geometry}
+     Academic Press, 
+     San Diego, 
+     CA, 
+     1994
+\bibitem{peller}
+    Peller V.V.,
+    \emph{Hankel Operators and their Applications}
+    Springer-Verlag,
+    New York, 
+    NY,
+    2003    
+\bibitem{garnett}
+    Garnett J.B.
+    \emph{Bounded analytic functions}
+    Springer-Verlag,
+    New York,
+    NY,
+    2007    
+\end{thebibliography}
+
+
+\end{document}
