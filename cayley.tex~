@@ -42,7 +42,7 @@ measure on $\Rl$ is denoted $\lambda$, and two dimensional Lebesgue measure on
 $\Cplx$ is denoted $\ha_2$.
 
 Throughout these notes, $\omega$ denotes the \emph{Cayley transform}.
-$\omega:\Cplx\setminus\{1}\rightarrow \Cplx$, and 
+$\omega:\Cplx\setminus\{1\}\rightarrow \Cplx$, and 
 \begin{equation*}
     \omega(\zeta) = i\frac{1+\zeta}{1-\zeta},\;\zeta \in \Disc.
 \end{equation*}
@@ -228,6 +228,23 @@ of complex differentiable functions $f$ on $\Disc$ and $g$ on $\Half$
 respectively such that $\|f\|_{H^p(\Disc;E)} < \infty$ and $\|g\|_{H^p(\Half;E)} < \infty$
 respectively for $p \in (0,\infty]$. 
 
+Typically, we do not consider Hardy spaces as spaces of functions
+on the unit ball or upper half plane. This is justified
+by the following pair of theorems,
+\begin{theorem}
+    For almost all $\zeta \in \Circ$, and $f \in H^p(\Disc;E)$, the radial limit
+    \begin{equation*}
+        \tilde{f}(\zeta) = \lim_{r\rightarrow1^{-}}f(r\zeta).
+    \end{equation*}
+    exists, defines a function $\tilde{f} \in L^p(\Circ;E)$.
+\end{theorem}
+\begin{theorem}
+    For almost all $x \in \Rl$, and $f \in H^p(\Half;E)$, the limit
+    \begin{equation*}
+        \tilde{f}(x) = \lim_{y\rightarrow 0^{+}} f(x+iy)
+    \end{equation*}
+    exists, defines a function $\tilde{f} \in L^p(\Rl;E)$.
+\end{theorem}
 
 
 \section*{Bounded and Vanishing Mean Oscillation}
