@@ -63,6 +63,8 @@ which agree $\mu$-almost everywhere.
 $L^0(X;E)$ denotes the set of all ($\mu$-almost everywhere equivalence classes of)
 weakly measurable functions from $X$ to $E$.
 
+When $X$ is a set with counting measure, we denote $L^p(X;E)$ as $\ell^p(X;E)$.
+
 Suppose $\zeta \in \Circ$. Provided that $\zeta \neq 1$, we see that $\omega(\zeta)$
 is defined, and $\omega$ maps $\Circ\setminus\{1\}$ smoothly to $\Rl$. Thus for
 $f \in L^0(\Rl;E)$, we can define $\tilde{f} \in L^0(\Circ;E)$
@@ -79,6 +81,34 @@ Thus we can define the important operator $\U:L^0(\Circ;E)\rightarrow L^0(\Rl;E)
 It is the purpose of these notes to collate various results concerning the images
 of certain subspaces of $L^0(\Circ;E)$ under $\U$.
 
+\subsection*{Fourier transform}
+Let $(X,\Sigma,\mu)$ be a measure space. By assumption, $f \in L^0(X;E)$ is 
+weakly measurable. If we make the further assumption that $f$ is \emph{almost surely
+separably valued}, that is, there is some $N \subset X$ with $\mu(N) = 0$
+such that $f(X\setminus N) \subseteq E$ is separable, then we 
+may define the Bochner integral,
+\begin{equation*}
+    \int_X f\;d\mu.
+\end{equation*}
+
+Suppose that $f \in L^1(\Circ;E)$ is almost surely separably valued. Then
+for each $n \in \Intgr$, the integral
+\begin{equation*}
+    \hat{f}(n) = \int_\Circ f(\zeta)\zeta^{-n}\;d\ha(\zeta)
+\end{equation*}
+exists. 
+\begin{theorem}
+    The map
+    \begin{equation*}
+        f \in L^2(\Circ;E)\mapsto \{\hat{f}(n)\}_{n\in\Intgr}
+    \end{equation*}
+    is an isometric isomorphism of Banach spaces,
+    \begin{equation*}
+        L^2(\Circ;E) \isom \ell^2(\Intgr;E).
+    \end{equation*}
+    When $E$ is a Hilbert space, this is an isometric isomorphism
+    of Hilbert spaces.
+\end{theorem}       
 
 \subsection*{Spaces of smooth functions}
 The spaces $C(\Circ;E)$ and $C(\Rl;E)$ denote spaces of continuous $E$-valued functions on
@@ -245,6 +275,9 @@ by the following pair of theorems,
     \end{equation*}
     exists, defines a function $\tilde{f} \in L^p(\Rl;E)$.
 \end{theorem}
+
+The subspaces of $L^p(\Circ;E)$ and $L^p(\Rl;E)$ that can be obtained
+as boundary values in this way are denoted $H^p(\Circ;E)$ and $H^p(\Rl;E)$.
 
 
 \section*{Bounded and Vanishing Mean Oscillation}
